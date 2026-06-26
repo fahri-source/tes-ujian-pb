@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:;">
+    <title>Kuis Analisis Proses Bisnis (ADBIS4330)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Area Kuis -->
+        <div id="quiz-area">
+            <div class="header">
+                <span>Latihan Mandiri - Analisis Proses Bisnis</span>
+                <span id="progress">1/42</span>
+            </div>
+            <h2 id="q-text">Memuat pertanyaan...</h2>
+            <div id="options"></div>
+            <div id="explanation" class="explanation-box"></div>
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" id="prev-btn" disabled>Sebelumnya</button>
+                <button class="btn" id="next-btn" disabled>Berikutnya</button>
+            </div>
+        </div>
+
+        <!-- Area Skor Akhir -->
+        <div class="score-screen" id="score-area">
+            <h2>Evaluasi Selesai!</h2>
+            <h1 id="score-text">0 / 42</h1>
+            <p id="feedback-text"></p>
+            <button class="btn" style="float:none; margin-bottom:20px;" onclick="location.reload()">Ulangi Kuis</button>
+            <div class="review-area" id="review-container">
+                <h3 style="color: #fff; margin-bottom: 15px;">Detail Evaluasi Jawaban:</h3>
+                <div id="review-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menghubungkan ke logika JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
