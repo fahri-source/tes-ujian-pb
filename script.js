@@ -83,10 +83,18 @@ function loadQuestion() {
         label.className = 'option';
         const isSelected = existingAnswer && existingAnswer.selected === key;
         
+        // 1. Hilangkan 'onclick' dari string HTML bawaan
         label.innerHTML = `
-            <input type="radio" name="ans" value="${key}" ${isSelected ? 'checked' : ''} onclick="checkAnswer(this, '${key}')"> 
+            <input type="radio" name="ans" value="${key}" ${isSelected ? 'checked' : ''}> 
             <span class="option-text">[${key.toUpperCase()}] ${escapeHTML(val)}</span>
         `;
+
+        // 2. Pasang event handler yang aman dan ramah CSP menggunakan JavaScript murni
+        const radioInput = label.querySelector('input[type="radio"]');
+        radioInput.addEventListener('click', function() {
+            checkAnswer(this, key);
+        });
+
         optionsDiv.appendChild(label);
     }
 
@@ -99,7 +107,6 @@ function loadQuestion() {
         nextBtn.disabled = true;
     }
 }
-
 function checkAnswer(radioElement, selectedKey) {
     const q = data[current];
     const correctKey = q.ans;
