@@ -172,3 +172,14 @@ input[type="radio"] {
     font-size: 0.95rem; 
     font-weight: bold; 
 }
+/* Gaya untuk tombol ulangi kuis pada layar skor */
+.btn-repeat {
+    float: none;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk judul detail evaluasi */
+.review-title {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
